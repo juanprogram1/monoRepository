@@ -1,9 +1,16 @@
 {
   "name": "monorepository",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
-  "workspaces": [],
-  "scripts": {},
+  "workspaces": [
+    "projects/**"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace --if-present",
+    "dev:frontend": "npm run dev -w projects/appRadio/frontend",
+    "dev:backend": "npm run dev -w projects/appRadio/backend"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
