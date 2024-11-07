@@ -2,12 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "node dist/index.js",
-    "build": "tsc"
+    "start": "npx kill-port 3000 && nodemon",
+    "build": "rimraf dist types && tsc",
+    "clean": "rimraf dist types"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juanprogram1",
   "license": "ISC",
   "description": "",
   "dependencies": {
