@@ -1,16 +1,18 @@
 import express, { Express, Request, Response } from "express";
-import { router } from "./routes/index.routes.js";
+import { users } from "./routes/user.routes";
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
-//Routes basic to test the server
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("welcome to the server");
+app.get("/", (request: Request, response: Response) => {
+  response.send("Home!");
 });
-app.use("/api", router);
+
+app.use("/User", users);
 
 app.listen(port, () => {
-  console.log("Server is running on port http://localhost:3000");
+  console.log("Server is running on port http://localhost:8080");
 });

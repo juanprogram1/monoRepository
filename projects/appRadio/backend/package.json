@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npx kill-port 3000 && nodemon",
+    "start": "npx kill-port 8080 && nodemon",
     "build": "rimraf dist types && tsc",
     "clean": "rimraf dist types"
   },
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/mysql": "^2.15.26",
     "@types/node": "^22.8.4",
     "@types/ws": "^8.5.12",
     "typescript": "^5.6.3"
